@@ -1,0 +1,7 @@
+---
+applications:
+- name: static-app
+  random-route: true
+  memory: 32M
+  instances: 2
+  path: ./
