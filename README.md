@@ -18,6 +18,6 @@ paap help
 
 ### Running
 
-* push - Simple cf push demo (static app with manifest)
-* buildpacks - TODO
+* paap push = Simple cf push demo (static app with manifest)
+* paap buildpacks = TODO
 
