@@ -7,18 +7,21 @@ import (
 
 func main() {
 
-	var cmds []string
 	switch os.Args[1] {
 
 	case "push":
-		cmds = []string{
-			"cf login -a $CF_API -u $CF_USER -p $CF_PASS",
-			"cf target -o $CF_ORG -s $CF_SPACE",
-			"cf push -f ./bin/static-app/manifest.yml"}
+		commands := `cf login -a $CF_API -u $CF_USER -p $CF_PASS
+					 cf target -o $CF_ORG -s $CF_SPACE
+					 cf push -f ./bin/static-app/manifest.yml`
+
+		RunCommandString(commands)
 
 	case "buildpacks":
-		cmds = []string{
-			"echo TODO"}
+		commands := `echo TODO
+					 echo TODO2
+					 echo TODO3`
+
+		RunCommandString(commands)
 
 	case "help":
 		fmt.Printf("1.SETUP: You must set the following environment variables:\n")
@@ -31,5 +34,5 @@ func main() {
 		fmt.Printf("     push\n")
 		fmt.Printf("     buildpacks\n")
 	}
-	runCommands(cmds)
+
 }
