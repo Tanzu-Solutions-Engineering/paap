@@ -3,6 +3,7 @@ package main
 import (
 	"os"
     "fmt"
+    "paap/cmd"
 )
 
 func main() {
@@ -14,25 +15,25 @@ func main() {
 					 cf target -o $CF_ORG -s $CF_SPACE
 					 cf push -f ./bin/static-app/manifest.yml`
 
-		RunCommandString(commands)
+		cmd.RunCommands(commands)
 
 	case "buildpacks":
 		commands := `echo TODO
 					 echo TODO2
 					 echo TODO3`
 
-		RunCommandString(commands)
+		cmd.RunCommands(commands)
 
 	case "help":
-		fmt.Printf("1.SETUP: You must set the following environment variables:\n")
-		fmt.Printf("     CF_API\n")
-		fmt.Printf("     CF_USER\n")
-		fmt.Printf("     CF_PASS\n")
-		fmt.Printf("     CF_ORG\n")
-		fmt.Printf("     CF_SPACE\n")
-		fmt.Printf("2.RUN: You can run the following commands:\n")
-		fmt.Printf("     push\n")
-		fmt.Printf("     buildpacks\n")
+		fmt.Println("\nSETUP: You must set the following environment variables:")
+		fmt.Println("     CF_API")
+		fmt.Println("     CF_USER")
+		fmt.Println("     CF_PASS")
+		fmt.Println("     CF_ORG")
+		fmt.Println("     CF_SPACE")
+		fmt.Println("\nRUN: You can run the following commands:")
+		fmt.Println("     push")
+		fmt.Println("     buildpacks\n")
 	}
 
 }
