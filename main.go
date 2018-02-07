@@ -18,11 +18,15 @@ func main() {
 		cmd.RunCommands(commands)
 
 	case "buildpacks":
-		commands := `echo TODO
-					 echo TODO2
-					 echo TODO3`
+
+		cmd.PivnetGet(
+			"https://network.pivotal.io/api/v2/products/buildpacks/releases/31948/product_files/62976/download",
+			"./bin/buildpacks/java-buildpack-offline-v4.8.zip")
+
+		commands := `cf buildpacks`
 
 		cmd.RunCommands(commands)
+
 
 	case "help":
 		fmt.Println("\nSETUP: You must set the following environment variables:")
@@ -31,6 +35,7 @@ func main() {
 		fmt.Println("     CF_PASS")
 		fmt.Println("     CF_ORG")
 		fmt.Println("     CF_SPACE")
+		fmt.Println("	 CF_NETWORK_TOKEN")
 		fmt.Println("\nRUN: You can run the following commands:")
 		fmt.Println("     push")
 		fmt.Println("     buildpacks\n")
