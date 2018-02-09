@@ -1,0 +1,5 @@
+export CF_USER=admin
+export CF_PASS=admin
+export CF_API=https://api.local.pcfdev.io
+export CF_ORG=demo
+export CF_SPACE=development

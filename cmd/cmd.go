@@ -12,8 +12,6 @@ import (
 func command(cmd string, args []string){
 	cli_cmd := exec.Command(cmd, args...)
 
-	fmt.Println(cli_cmd.Args)
-
 	stdoutIn, _ := cli_cmd.StdoutPipe()
 	stderrIn, _ := cli_cmd.StderrPipe()
 
@@ -49,6 +47,7 @@ func command(cmd string, args []string){
 func PivnetGet(url, output string){
 	authHeader := fmt.Sprintf("Authorization: Token %s", os.Getenv("CF_NETWORK_TOKEN"))
 	args := []string{"-nc", "--header", authHeader, url, "-O", output}
+	fmt.Printf("COMMAND: wget %s %s \n\n",url, output)
 	command("wget", args)
 }
 
