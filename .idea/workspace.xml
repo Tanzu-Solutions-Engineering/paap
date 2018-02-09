@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="983c84c8-30b4-4ee5-b97d-026e28ceded8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/buildpacks/java-buildpack-offline-v4.8.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/springboot-app/demo.war" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/.mvn/wrapper/maven-wrapper.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/springboot-app/manifest-development.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/springboot-app/manifest-production.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/env_development" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/env_production" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/smokehttp/smokehttp.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/.mvn/wrapper/maven-wrapper.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/mvnw" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/mvnw.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/src/main/java/com/example/pivotal/demo/DemoApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/src/main/java/com/example/pivotal/demo/DemoController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/src/main/java/com/example/pivotal/demo/StringResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/src/main/resources/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/springboot-app/src/test/java/com/example/pivotal/demo/DemoApplicationTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmd/cmd.go" afterPath="$PROJECT_DIR$/cmd/cmd.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/env_development" afterPath="$PROJECT_DIR$/env_development" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -400,12 +380,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1517586749759</updated>
-      <workItem from="1517586751566" duration="88886000" />
+      <workItem from="1517586751566" duration="89689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88886000" />
+    <option name="totallyTimeSpent" value="89689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="351" y="23" width="1557" height="1057" extended-state="0" />
