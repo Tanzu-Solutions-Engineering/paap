@@ -11,9 +11,6 @@ func main() {
 
 	switch os.Args[1] {
 
-	case "smoke" :
-		smokehttp.SmokeHttp("http://springboot-app-development.local.pcfdev.io", 3)
-
 	case "login" :
 		cmd.RunCommands(`cf login -a $CF_API -u $CF_USER -p $CF_PASS --skip-ssl-validation`)
 
@@ -54,6 +51,9 @@ func main() {
 
 		cmd.RunCommands(commands)
 
+	case "run-smoketest" :
+		smokehttp.SmokeHttp("http://springboot-app-development.local.pcfdev.io", 3)
+
 	case "install-plugins":
 		commands := `cf plugins
 		             cf install-plugin -f -r CF-Community buildpack-usage
@@ -88,12 +88,13 @@ func main() {
 		fmt.Println("	 CF_NETWORK_TOKEN")
 		fmt.Println("\nRUN: You can run the following commands:")
 		fmt.Println("     login")
-		fmt.Println("     create-lob")
-		fmt.Println("     delete-lob")
 		fmt.Println("     install-plugins")
-		fmt.Println("     uninstall-plugins")
-		fmt.Println("     update-buildpack\n")
+		fmt.Println("     create-lob")
+		fmt.Println("     deploy-app")
+		fmt.Println("     run-smoketest")
+		fmt.Println("     upgrade-middleware\n")
 		fmt.Println("     teardown")
+		fmt.Println("     teardown all")
 	}
 
 }

@@ -1,15 +1,19 @@
 ---
 applications:
 - name: springboot-app
-  memory: 768MB
+  memory: 384MB
   instances: 1
   path: ./demo.war
   routes:
     - route: springboot-app.local.pcfdev.io
+  env:
+      JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {stack_threads: 10}]'
 - name: springboot-app_
   random-route: true
-  memory: 768MB
+  memory: 384MB
   instances: 1
   path: ./demo.war
   routes:
     - route: springboot-app.local.pcfdev.io
+  env:
+      JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {stack_threads: 10}]'
