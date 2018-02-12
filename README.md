@@ -14,7 +14,7 @@ requirement but golang is the modern age BASH for sysadmins.
 
 5. The best way to explain how to do something is via a "demo". This tool is designed to be used primarily as a teach via demo tool.
 
-## The GOAL of "paap" is to codeify and showcase common Cloud Operations activities and commands. 
+## The GOAL of "paap" is to codeify and showcase common cloud operations activities and commands. 
 
 ## Getting Started
 
