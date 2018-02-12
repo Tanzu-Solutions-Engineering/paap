@@ -37,7 +37,7 @@ export CF_PASS=admin
 export CF_API=https://api.local.pcfdev.io
 export CF_ORG=demo
 export CF_SPACE=development
-export CF_NETWORK_TOKEN=
+export CF_NETWORK_TOKEN=[YOUR_TOKN]
 ```
 
 * Install CF CLI Plugins
