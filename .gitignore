@@ -1,2 +1,2 @@
-/bin/**/*.zip
+/bin/buildpacks/*.zip
 /**/target/**

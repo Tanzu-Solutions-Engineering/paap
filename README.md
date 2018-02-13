@@ -18,8 +18,9 @@ requirement but golang is the modern age BASH for sysadmins.
 
 ## Getting Started
 
-### Clone the github repo and run
+### Clone the "paap" github repo and run
 ```
+go get gopkg.in/urfave/cli.v1
 go install
 paap help
 ``` 

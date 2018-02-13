@@ -19,7 +19,7 @@ var BuildpackCommands = []cli.Command{
 	},
 	{
 		Name:  "create-lob",
-		Usage: "create pre-defined org with 2 spaces and small quotas",
+		Usage: "create pre-defined org with 'development' and 'production' space, 10GB RAM, 10 AI quota",
 		Category: "Buildpack Demo",
 		Action: func(c *cli.Context) error {
 			commands := `cf org demo
