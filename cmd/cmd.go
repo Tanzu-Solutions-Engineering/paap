@@ -7,6 +7,9 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"net/http"
+	"log"
+	"encoding/json"
 )
 
 func command(cmd string, args []string){
@@ -45,10 +48,42 @@ func command(cmd string, args []string){
 }
 
 func PivnetGet(url, output string){
-	authHeader := fmt.Sprintf("Authorization: Token %s", os.Getenv("CF_NETWORK_TOKEN"))
-	args := []string{"-nc", "--header", authHeader, url, "-O", output}
-	fmt.Printf("COMMAND: wget %s %s \n\n",url, output)
-	command("wget", args)
+	authHeader := fmt.Sprintf("Authorization: Bearer %s", pivnetGetAccessToken())
+	args := []string{"-H", authHeader, "--create-dirs", "-L", "-C", "-", "-o", output, url}
+	fmt.Printf("COMMAND: curl %s",args[2:])
+	command("curl", args)
+}
+
+func pivnetGetAccessToken() string {
+
+	var accessToken (string) = "N/A"
+
+	type RefreshToken struct {
+		RefreshToken string `json:"refresh_token"`
+	}
+
+	jsonReq := RefreshToken{os.Getenv("CF_REFRESH_TOKEN")}
+	jsonValue, _ := json.Marshal(jsonReq)
+
+	request, err := http.NewRequest("POST", "https://network.pivotal.io//api/v2/authentication/access_tokens",bytes.NewBuffer(jsonValue));
+	request.Header.Set("Content-Type", "application/json")
+
+	res, err := http.DefaultClient.Do(request)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.StatusCode != http.StatusOK {
+		log.Fatalf("Success expected: %d", res.StatusCode)
+	} else {
+		var body struct {
+			AccessToken string `json:"access_token"`
+		}
+		json.NewDecoder(res.Body).Decode(&body)
+		accessToken = body.AccessToken
+	}
+	return accessToken
 }
 
 func RunCommands(cmdString string){

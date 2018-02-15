@@ -94,6 +94,8 @@ var BuildpackCommands = []cli.Command{
 						             cf buildpack-usage -b java_buildpack-v48`
 
 			cmd.RunCommands(commands)
+
+			//cmd.PivnetGetToken()
 			return nil
 		},
 	},
